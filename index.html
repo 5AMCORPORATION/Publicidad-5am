@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="Publicidad 5AM. Videos publicitarios profesionales desde $69 MXN para marcas, productos, servicios y páginas web.">
+<title>Publicidad 5AM — Tu marca merece atención</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#090909;
+  --surface:#111111;
+  --surface2:#171717;
+  --yellow:#FFD600;
+  --yellow2:#FFEA70;
+  --white:#F8F8F4;
+  --muted:#A6A6A0;
+  --line:rgba(255,255,255,.11);
+  --radius:22px;
+  --font:'DM Sans',sans-serif;
+  --display:'Space Grotesk',sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{
+  margin:0;background:var(--black);color:var(--white);
+  font-family:var(--font);line-height:1.6;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(ellipse at 78% 8%,rgba(255,214,0,.075),transparent 32%),
+    radial-gradient(ellipse at 5% 48%,rgba(255,214,0,.035),transparent 30%);
+}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+::selection{background:var(--yellow);color:#000}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+section{padding:100px 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--yellow);font-size:11px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.eyebrow::before{
+  content:"";width:20px;height:2px;background:var(--yellow);
+}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:var(--display);letter-spacing:-1.6px}
+h2{font-size:clamp(32px,5vw,52px);line-height:1.12;margin:15px 0}
+.section-intro{max-width:600px;color:var(--muted);font-size:15px}
+.section-heading{margin-bottom:42px}
+.yellow{color:var(--yellow)}
+.muted{color:var(--muted)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 20px;border:1px solid transparent;border-radius:10px;
+  font-weight:800;font-size:13px;transition:transform .2s,background .2s,border .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--yellow);color:#080808}
+.btn-primary:hover{background:var(--yellow2)}
+.btn-secondary{border-color:var(--line);background:rgba(255,255,255,.035);color:white}
+.btn-secondary:hover{border-color:var(--yellow)}
+.btn-small{padding:10px 15px}
+.tag{
+  display:inline-block;border:1px solid var(--line);border-radius:50px;
+  padding:6px 10px;font-size:10px;letter-spacing:.8px;text-transform:uppercase;
+}
+header{
+  height:76px;position:sticky;top:0;z-index:50;
+  background:rgba(9,9,9,.82);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;letter-spacing:-.8px}
+.logo-mark{
+  width:37px;height:37px;display:grid;place-items:center;
+  background:var(--yellow);color:#000;border-radius:9px;
+  font-size:17px;font-weight:800;
+}
+.logo small{display:block;color:var(--muted);font:600 9px var(--font);letter-spacing:2px}
+.nav-links{display:flex;align-items:center;gap:27px;font-size:12px;color:#C6C6C0}
+.nav-links a:hover{color:var(--yellow)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:8px 11px}
+.hero{padding:90px 0 70px;min-height:610px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px}
+.hero h1{font-size:clamp(44px,6.4vw,77px);line-height:.99;margin:23px 0;max-width:700px}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1px var(--yellow)}
+.hero-copy{max-width:510px;color:#ADADA7;font-size:16px;line-height:1.85}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.hero-note{font-size:11px;color:#92928C}
+.hero-note strong{color:white}
+.hero-art{
+  position:relative;min-height:400px;display:grid;place-items:center;
+  isolation:isolate;
+}
+.art-glow{
+  position:absolute;width:320px;height:320px;border-radius:50%;
+  background:rgba(255,214,0,.12);filter:blur(65px);z-index:-1;
+}
+.ad-card{
+  width:min(100%,390px);aspect-ratio:4/4.2;padding:30px;
+  background:linear-gradient(145deg,#27251A,#11110F 56%,#292713);
+  border:1px solid rgba(255,214,0,.4);border-radius:25px;
+  position:relative;overflow:hidden;
+  box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 65px rgba(255,214,0,.08);
+  transform:rotate(-3deg);transition:transform .5s;
+}
+.ad-card:hover{transform:rotate(0deg) translateY(-4px)}
+.ad-card::before{
+  content:"";position:absolute;width:250px;height:250px;right:-100px;top:-100px;
+  border-radius:50%;background:var(--yellow);filter:blur(85px);opacity:.24;
+}
+.ad-card>*{position:relative}
+.ad-card-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:2px}
+.ad-dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);display:inline-block;margin-right:7px}
+.ad-card h2{font-size:clamp(35px,5vw,56px);line-height:.99;margin:55px 0 18px;letter-spacing:-2px}
+.ad-card h2 span{color:var(--yellow)}
+.ad-card p{color:#B6B4A7;font-size:12px;max-width:230px}
+.ad-card-bottom{position:absolute;bottom:26px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:end}
+.price-big{font:700 35px var(--display);color:var(--yellow)}
+.price-big small{display:block;font:500 10px var(--font);color:#BDBDB4}
+.arrow-circle{width:42px;height:42px;display:grid;place-items:center;background:var(--yellow);color:#000;border-radius:50%;font-size:20px}
+.floating-price{
+  position:absolute;bottom:40px;right:-5px;padding:15px 19px;
+  background:var(--yellow);color:#080808;border-radius:12px;
+  box-shadow:0 12px 40px #0008;transform:rotate(4deg);
+}
+.floating-price small{display:block;font-size:10px;font-weight:700}
+.floating-price strong{font:700 25px var(--display)}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:23px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat{text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat strong{display:block;font:700 23px var(--display);color:var(--yellow)}
+.stat span{font-size:11px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.service-card,.package-card{
+  padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,#161616,#0D0D0D);
+  border-radius:var(--radius);position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+}
+.service-card:hover,.package-card:hover{border-color:rgba(255,214,0,.45);transform:translateY(-4px)}
+.service-icon{
+  width:43px;height:43px;display:grid;place-items:center;
+  background:rgba(255,214,0,.1);border:1px solid rgba(255,214,0,.2);
+  color:var(--yellow);border-radius:12px;font-size:20px;margin-bottom:22px;
+}
+.service-card h3{font-size:20px;margin-bottom:10px;letter-spacing:-.6px}
+.service-card p{font-size:13px;color:var(--muted);margin-bottom:0}
+.section-dark{background:#0D0D0D;border-top:1px solid #191919;border-bottom:1px solid #191919}
+.offer-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
+.offer-copy h2{font-size:clamp(36px,5vw,58px)}
+.offer-copy p{color:var(--muted);font-size:14px}
+.offer-box{
+  padding:34px;border:1px solid rgba(255,214,0,.3);border-radius:23px;
+  background:radial-gradient(ellipse at top right,rgba(255,214,0,.12),transparent 60%),#141414;
+  box-shadow:0 20px 65px #0004;
+}
+.offer-label{display:inline-block;background:var(--yellow);color:#000;padding:7px 11px;border-radius:5px;font-size:10px;font-weight:900;letter-spacing:1px}
+.offer-prices{display:flex;align-items:baseline;gap:13px;margin:23px 0 10px}
+.offer-prices strong{font:700 clamp(48px,7vw,74px) var(--display);letter-spacing:-4px;color:var(--yellow)}
+.offer-prices del{color:#777;font-size:18px}
+.offer-box p{font-size:13px;color:var(--muted)}
+.offer-points{list-style:none;padding:0;margin:24px 0}
+.offer-points li{padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}
+.offer-points li::before{content:"✓";color:var(--yellow);margin-right:10px}
+.packages-note{padding:13px 15px;border:1px dashed rgba(255,214,0,.3);border-radius:10px;color:#BDBDB5;font-size:12px;margin-bottom:24px}
+.package-card{display:flex;flex-direction:column;min-height:320px}
+.package-card.featured{border-color:rgba(255,214,0,.35)}
+.package-status{align-self:flex-start;background:#292516;color:var(--yellow);border-radius:5px;padding:6px 9px;font-size:10px;font-weight:800}
+.package-card h3{font-size:23px;margin:20px 0 8px}
+.package-card p{font-size:13px;color:var(--muted)}
+.package-card ul{padding-left:18px;color:#C8C8C0;font-size:12px;line-height:2}
+.package-card .btn{margin-top:auto;pointer-events:none;opacity:.65}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.process-item{padding-top:20px;border-top:1px solid var(--line)}
+.process-number{font:700 34px var(--display);color:var(--yellow)}
+.process-item h3{font-size:19px;margin:13px 0 8px;letter-spacing:-.5px}
+.process-item p{color:var(--muted);font-size:13px}
+.quote-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px;align-items:start}
+.quote-aside{position:sticky;top:105px}
+.quote-aside h2{font-size:clamp(37px,5vw,54px)}
+.quote-aside p{font-size:14px;color:var(--muted)}
+.quote-aside-card{padding:20px;margin-top:25px;background:#141414;border:1px solid var(--line);border-radius:15px}
+.quote-aside-card strong{font:700 29px var(--display);color:var(--yellow)}
+.quote-aside-card small{display:block;color:var(--muted);font-size:11px}
+.form-panel{background:#121212;border:1px solid var(--line);border-radius:22px;padding:30px}
+.form-heading{font:600 18px var(--display);margin:0 0 22px}
+.form-heading span{color:var(--yellow);margin-right:9px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:700;color:#DEDED7}
+.field label i{font-style:normal;color:var(--yellow)}
+.field input,.field select,.field textarea{
+  width:100%;min-width:0;padding:13px 14px;
+  background:#090909;color:#F6F6F0;border:1px solid #30302B;
+  border-radius:9px;outline:none;transition:border .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--yellow)}
+.field input::placeholder,.field textarea::placeholder{color:#77776F}
+.field select{color-scheme:dark}
+.field textarea{resize:vertical;min-height:105px}
+.helper{font-size:10px;color:#96968F}
+.quantity-control{display:flex;align-items:center;gap:12px}
+.quantity-control button{
+  width:39px;height:42px;background:#25251E;color:var(--yellow);
+  border:1px solid #3A3825;border-radius:9px;font-size:20px;
+}
+.quantity-control input{flex:1;text-align:center}
+.quote-summary{margin:24px 0;padding:20px;border:1px solid rgba(255,214,0,.22);border-radius:13px;background:rgba(255,214,0,.035)}
+.summary-row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:#BDBDB5;padding:5px 0}
+.summary-row strong{color:#fff;text-align:right}
+.summary-total{border-top:1px solid var(--line);margin-top:12px;padding-top:15px}
+.summary-total span{font-weight:800;color:white}
+.summary-total strong{font:700 30px var(--display);color:var(--yellow)}
+.consent{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:11px;margin:18px 0}
+.consent input{accent-color:var(--yellow);margin-top:4px}
+.submit-btn{width:100%;border:0;font-size:14px;min-height:52px}
+.form-footnote{text-align:center;font-size:10px;color:#898981;margin:13px 0 0}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:#111}
+summary{cursor:pointer;font-weight:700;font-size:13px;list-style:none;display:flex;justify-content:space-between;gap:15px}
+summary::after{content:"+";color:var(--yellow);font-size:19px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{font-size:12px;color:var(--muted);margin:14px 0 0}
+.cta-band{
+  padding:55px;border:1px solid rgba(255,214,0,.23);border-radius:24px;
+  background:radial-gradient(ellipse at 90% 20%,rgba(255,214,0,.13),transparent 45%),#131313;
+  display:flex;align-items:center;justify-content:space-between;gap:25px;
+}
+.cta-band h2{font-size:clamp(30px,4vw,44px);margin-bottom:10px}
+.cta-band p{margin:0;color:var(--muted);font-size:13px}
+footer{padding:35px 0;border-top:1px solid var(--line)}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-copy{color:var(--muted);font-size:11px}
+.footer-links{display:flex;gap:17px;color:#BDBDB5;font-size:11px}
+.footer-links a:hover{color:var(--yellow)}
+.toast{
+  position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);
+  padding:13px 18px;background:#F8F8F4;color:#111;border-radius:10px;
+  box-shadow:0 15px 45px #0008;font-size:12px;font-weight:700;
+  opacity:0;pointer-events:none;transition:.25s;z-index:100;max-width:calc(100% - 32px);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+@media(max-width:850px){
+  .nav-links{
+    display:none;position:absolute;top:75px;left:0;right:0;
+    padding:22px;background:#0D0D0D;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;gap:18px
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .nav-links .btn{width:100%}
+  .hero{padding-top:60px}
+  .hero-grid,.offer-grid,.quote-layout{grid-template-columns:1fr}
+  .hero-grid{gap:25px}
+  .hero-art{min-height:360px}
+  .cards{grid-template-columns:1fr 1fr}
+  .quote-aside{position:static}
+  .offer-grid{gap:30px}
+  .quote-layout{gap:30px}
+  .cta-band{padding:35px;align-items:flex-start;flex-direction:column}
+}
+@media(max-width:560px){
+  .container{width:calc(100% - 30px)}
+  section{padding:72px 0}
+  .hero{padding:52px 0 45px}
+  .hero h1{font-size:clamp(43px,12vw,62px)}
+  .hero-copy{font-size:14px}
+  .hero-art{min-height:335px}
+  .ad-card{width:88%;padding:24px}
+  .ad-card h2{margin-top:43px}
+  .ad-card-bottom{left:24px;right:24px}
+  .floating-price{right:0;bottom:20px}
+  .stats-grid{gap:5px}
+  .stat strong{font-size:19px}
+  .stat span{font-size:9px}
+  .cards,.process-grid,.faq-grid{grid-template-columns:1fr}
+  .service-card,.package-card{padding:23px}
+  .offer-box,.form-panel{padding:21px}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .process-grid{gap:20px}
+  .footer-row{align-items:flex-start;flex-direction:column}
+  .footer-links{flex-wrap:wrap}
+  .summary-total strong{font-size:25px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#inicio" aria-label="Publicidad 5AM, inicio">
+      <span class="logo-mark">5</span>
+      <span>PUBLICIDAD 5AM<small>CREATIVIDAD QUE CONECTA</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#promocion">Promoción</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#proceso">Cómo funciona</a>
+      <a class="btn btn-primary btn-small" href="#cotizar">Cotizar proyecto ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">PUBLICIDAD DIGITAL · 5AM</span>
+      <h1>Tu marca merece <span class="yellow">atención.</span><br><span class="outline">No pasar desapercibida.</span></h1>
+      <p class="hero-copy">Convertimos ideas, productos y servicios en videos publicitarios pensados para captar miradas. Presenta tu proyecto y solicita tu cotización en minutos.</p>
+      <div class="hero-actions">
+        <a href="#cotizar" class="btn btn-primary">Crear mi cotización <span>↗</span></a>
+        <a href="#promocion" class="btn btn-secondary">Ver promoción ↓</a>
+      </div>
+      <p class="hero-note"><strong>Desde $69 MXN</strong> en tu primer video publicitario. <br>Promoción de bienvenida; condiciones indicadas abajo.</p>
+    </div>
+    <div class="hero-art reveal" aria-label="Vista conceptual de un anuncio publicitario">
+      <div class="art-glow"></div>
+      <div class="ad-card">
+        <div class="ad-card-top"><span><span class="ad-dot"></span>5AM STUDIO</span><span>AD / 001</span></div>
+        <h2>MAKE<br>THEM<br><span>LOOK.</span></h2>
+        <p>Una idea. Una marca. Una historia que merece ser vista.</p>
+        <div class="ad-card-bottom">
+          <div class="price-big">$69<small>MXN · PRIMER VIDEO</small></div>
+          <span class="arrow-circle">↗</span>
+        </div>
+      </div>
+      <div class="floating-price"><small>VIDEO PUBLICITARIO</small><strong>$129 MXN</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>$69 MXN</strong><span>Primer video promocional</span></div>
+    <div class="stat"><strong>$129 MXN</strong><span>Cada video adicional</span></div>
+    <div class="stat"><strong>100% digital</strong><span>Solicitud directa por WhatsApp</span></div>
+  </div>
+</div>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">¿QUÉ QUIERES PROMOCIONAR?</span>
+      <h2>Una idea puede convertirse<br>en <span class="yellow">un gran anuncio.</span></h2>
+      <p class="section-intro">Cuéntanos qué quieres mostrar. Adaptaremos la propuesta a tu producto, servicio o proyecto.</p>
+    </div>
+    <div class="cards">
+      <article class="service-card reveal">
+        <div class="service-icon">✳</div>
+        <h3>Productos</h3>
+        <p>Ropa, accesorios, tecnología, alimentos, cosméticos y productos de todo tipo.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">↗</div>
+        <h3>Servicios</h3>
+        <p>Negocios locales, barberías, restaurantes, profesionales y servicios digitales.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">⌘</div>
+        <h3>Páginas web y apps</h3>
+        <p>Presenta plataformas, tiendas, aplicaciones y herramientas digitales.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">◈</div>
+        <h3>Marcas y emprendimientos</h3>
+        <p>Comunica tu propuesta de valor y presenta tu marca de manera atractiva.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">▶</div>
+        <h3>Lanzamientos</h3>
+        <p>Anuncia una nueva colección, promoción, apertura o lanzamiento especial.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">＋</div>
+        <h3>Otro proyecto</h3>
+        <p>¿Tienes una idea diferente? Explícala en el formulario y revisaremos tu solicitud.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" id="promocion">
+  <div class="container offer-grid">
+    <div class="offer-copy reveal">
+      <span class="eyebrow">OFERTA DE BIENVENIDA</span>
+      <h2>Tu primera idea,<br><span class="yellow">a un precio especial.</span></h2>
+      <p>Prueba nuestro servicio de video publicitario con una promoción exclusiva para tu primer anuncio.</p>
+      <p>La promoción aplica una sola vez por cliente. Los siguientes videos se cotizan al precio regular.</p>
+      <a href="#cotizar" class="btn btn-primary">Aprovechar promoción ↗</a>
+    </div>
+    <div class="offer-box reveal">
+      <span class="offer-label">PRIMER VIDEO · PRECIO PROMOCIONAL</span>
+      <div class="offer-prices"><strong>$69</strong><del>$129 MXN</del></div>
+      <p>MXN por tu primer video publicitario.</p>
+      <ul class="offer-points">
+        <li>Solicitud de anuncio para tu producto o servicio</li>
+        <li>Brief creativo para conocer tu idea</li>
+        <li>Confirmación del alcance antes de comenzar</li>
+        <li>Precio regular de $129 MXN por cada video adicional</li>
+      </ul>
+      <a href="#cotizar" class="btn btn-primary" style="width:100%">Solicitar mi primer video →</a>
+    </div>
+  </div>
+</section>
+
+<section id="paquetes">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">PRÓXIMAMENTE</span>
+      <h2>Más ideas. Más formatos.<br><span class="yellow">Nuevos paquetes.</span></h2>
+      <p class="section-intro">Estamos preparando opciones para quienes necesitan más contenido. Estos paquetes son conceptos de ejemplo, todavía no están disponibles para compra.</p>
+    </div>
+    <div class="packages-note reveal">◷ Los paquetes que aparecen aquí son propuestas conceptuales. Los precios y las condiciones se anunciarán cuando estén disponibles.</div>
+    <div class="cards">
+      <article class="package-card reveal">
+        <span class="package-status">PRÓXIMAMENTE</span>
+        <h3>Starter</h3>
+        <p>Una primera experiencia para dar a conocer tu marca.</p>
+        <ul><li>Selección de ideas publicitarias</li><li>Concepto creativo</li><li>Propuesta para redes sociales</li></ul>
+        <button class="btn btn-secondary" disabled>Próximamente</button>
+      </article>
+      <article class="package-card featured reveal">
+        <span class="package-status">PRÓXIMAMENTE</span>
+        <h3>Growth</h3>
+        <p>Una propuesta para negocios que buscan mantener su presencia.</p>
+        <ul><li>Ideas para distintas campañas</li><li>Variantes de contenido</li><li>Plan creativo por objetivos</li></ul>
+        <button class="btn btn-secondary" disabled>Próximamente</button>
+      </article>
+      <article class="package-card reveal">
+        <span class="package-status">PRÓXIMAMENTE</span>
+        <h3>Brand Studio</h3>
+        <p>Una propuesta creativa pensada para construir identidad.</p>
+        <ul><li>Concepto visual de campaña</li><li>Contenido para lanzamientos</li><li>Propuesta personalizada</li></ul>
+        <button class="btn btn-secondary" disabled>Próximamente</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" id="proceso">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">SENCILLO Y DIRECTO</span>
+      <h2>De tu idea a una <span class="yellow">cotización.</span></h2>
+      <p class="section-intro">Tres pasos para explicarnos lo que necesitas y continuar por WhatsApp.</p>
+    </div>
+    <div class="process-grid">
+      <article class="process-item reveal"><span class="process-number">01</span><h3>Describe tu proyecto</h3><p>Indica qué quieres promocionar, el objetivo y el estilo de video que tienes en mente.</p></article>
+      <article class="process-item reveal"><span class="process-number">02</span><h3>Revisa tu cotización</h3><p>La página calcula el precio estimado según la cantidad de videos y la promoción inicial.</p></article>
+      <article class="process-item reveal"><span class="process-number">03</span><h3>Continúa por WhatsApp</h3><p>Revisa el mensaje preparado, envíalo y confirma con el equipo el alcance y los siguientes pasos.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="cotizar">
+  <div class="container quote-layout">
+    <aside class="quote-aside reveal">
+      <span class="eyebrow">COTIZA TU ANUNCIO</span>
+      <h2>Cuéntanos tu idea. <span class="yellow">Nosotros la escuchamos.</span></h2>
+      <p>Completa los datos de tu proyecto para preparar una solicitud clara y enviarla a nuestro WhatsApp.</p>
+      <div class="quote-aside-card">
+        <small>Tu precio estimado comienza en</small>
+        <strong>$69 MXN</strong>
+        <small>Primer video. Después, $129 MXN por video adicional.</small>
+      </div>
+      <p style="font-size:11px;margin-top:17px">No necesitas tener todo definido. Si aún no tienes referencias visuales, puedes explicarnos tu idea.</p>
+    </aside>
+
+    <div class="form-panel reveal">
+      <form id="quoteForm">
+        <h3 class="form-heading"><span>01</span> Tus datos de contacto</h3>
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Nombre completo <i>*</i></label>
+            <input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="¿Cómo te llamas?">
+          </div>
+          <div class="field">
+            <label for="business">Marca o negocio</label>
+            <input id="business" name="business" maxlength="100" placeholder="Nombre de tu marca">
+          </div>
+          <div class="field">
+            <label for="phone">Tu teléfono / WhatsApp <i>*</i></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="25" placeholder="10 dígitos o código de país">
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="150" placeholder="tucorreo@ejemplo.com">
+          </div>
+        </div>
+
+        <h3 class="form-heading" style="margin-top:32px"><span>02</span> Tu proyecto publicitario</h3>
+        <div class="form-grid">
+          <div class="field">
+            <label for="type">¿Qué quieres promocionar? <i>*</i></label>
+            <select id="type" name="type" required>
+              <option value="">Selecciona una opción</option>
+              <option>Producto físico</option>
+              <option>Servicio</option>
+              <option>Página web</option>
+              <option>Aplicación móvil</option>
+              <option>Marca o emprendimiento</option>
+              <option>Restaurante o negocio local</option>
+              <option>Lanzamiento o promoción</option>
+              <option>Otro proyecto</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="platform">¿Dónde utilizarás el anuncio?</label>
+            <select id="platform" name="platform">
+              <option value="">Selecciona una opción</option>
+              <option>TikTok</option>
+              <option>Instagram Reels</option>
+              <option>Facebook</option>
+              <option>YouTube Shorts</option>
+              <option>Publicidad pagada</option>
+              <option>Página web</option>
+              <option>Varias plataformas</option>
+              <option>Necesito asesoría</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="link">Enlace de tu producto, servicio o página web</label>
+            <input id="link" name="link" type="text" maxlength="500" placeholder="https://... o tu usuario de redes">
+            <span class="helper">Opcional. Puedes compartir una página, red social o referencia pública.</span>
+          </div>
+          <div class="field">
+            <label for="style">Estilo de video que buscas</label>
+            <select id="style" name="style">
+              <option value="">Todavía no lo sé</option>
+              <option>Cinematográfico</option>
+              <option>Elegante y minimalista</option>
+              <option>Dinámico y llamativo</option>
+              <option>Comercial de producto</option>
+              <option>Demostración de servicio</option>
+              <option>Con voz en off</option>
+              <option>Estilo tendencia para redes</option>
+              <option>Quiero una recomendación</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="materials">¿Tienes material para el anuncio?</label>
+            <select id="materials" name="materials">
+              <option value="">Selecciona una opción</option>
+              <option>Sí, tengo fotos y videos</option>
+              <option>Tengo imágenes de referencia</option>
+              <option>Solo tengo la idea</option>
+              <option>Necesito crear todo desde cero</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="objective">¿Qué quieres conseguir con el anuncio?</label>
+            <select id="objective" name="objective">
+              <option value="">Selecciona un objetivo</option>
+              <option>Conseguir ventas</option>
+              <option>Atraer clientes o mensajes</option>
+              <option>Dar a conocer mi marca</option>
+              <option>Conseguir visitas a mi página web</option>
+              <option>Promocionar un lanzamiento</option>
+              <option>Mostrar cómo funciona algo</option>
+              <option>Otro objetivo</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="description">Cuéntanos tu idea <i>*</i></label>
+            <textarea id="description" name="description" required minlength="10" maxlength="2000" placeholder="¿Qué vendes o qué servicio ofreces? ¿Qué te gustaría que apareciera en el video?"></textarea>
+          </div>
+        </div>
+
+        <h3 class="form-heading" style="margin-top:32px"><span>03</span> Cantidad y presupuesto</h3>
+        <div class="form-grid">
+          <div class="field">
+            <label for="quantity">¿Cuántos videos necesitas?</label>
+            <div class="quantity-control">
+              <button type="button" id="minus" aria-label="Restar un video">−</button>
+              <input id="quantity" name="quantity" type="number" min="1" max="50" value="1" inputmode="numeric" aria-label="Cantidad de videos" required>
+              <button type="button" id="plus" aria-label="Agregar un video">+</button>
+            </div>
+            <span class="helper">La promoción de $69 aplica al primer video.</span>
+          </div>
+          <div class="field">
+            <label for="budget">Presupuesto aproximado</label>
+            <select id="budget" name="budget">
+              <option value="">Prefiero conocer el precio</option>
+              <option>Menos de $300 MXN</option>
+              <option>$300–$500 MXN</option>
+              <option>$500–$1,000 MXN</option>
+              <option>Más de $1,000 MXN</option>
+              <option>Por definir</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="deadline">¿Cuándo necesitas el anuncio?</label>
+            <select id="deadline" name="deadline">
+              <option value="">Sin fecha definida</option>
+              <option>Lo antes posible</option>
+              <option>Dentro de una semana</option>
+              <option>Dentro de dos semanas</option>
+              <option>En una fecha específica</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quote-summary" aria-live="polite">
+          <div class="summary-row"><span>Primer video promocional</span><strong id="firstPrice">$69 MXN</strong></div>
+          <div class="summary-row"><span>Videos adicionales (<span id="extraCount">0</span>)</span><strong id="extraPrice">$0 MXN</strong></div>
+          <div class="summary-row summary-total"><span>Total estimado</span><strong id="totalPrice">$69 MXN</strong></div>
+          <div class="summary-row"><span>Descuento de bienvenida</span><strong id="discount">−$60 MXN</strong></div>
+          <p class="helper" style="margin:13px 0 0">Estimación basada en las tarifas publicadas. El alcance, la disponibilidad y cualquier servicio adicional deberán confirmarse por WhatsApp.</p>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consent" required>
+          <span>Acepto compartir los datos de este formulario mediante WhatsApp para atender mi solicitud de cotización. <i style="color:var(--yellow)">*</i></span>
+        </label>
+
+        <button type="submit" class="btn btn-primary submit-btn">Revisar y enviar solicitud por WhatsApp ↗</button>
+        <p class="form-footnote">WhatsApp abrirá un mensaje preparado. Podrás revisarlo antes de enviarlo.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" id="preguntas">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">PREGUNTAS FRECUENTES</span>
+      <h2>Antes de comenzar.</h2>
+    </div>
+    <div class="faq-grid">
+      <details><summary>¿Cuánto cuesta un video publicitario?</summary><p>El primer video cuesta $69 MXN con la promoción de bienvenida. Cada video adicional cuesta $129 MXN al precio publicado.</p></details>
+      <details><summary>¿Puedo anunciar cualquier producto o servicio?</summary><p>Puedes enviarnos solicitudes de productos, servicios, páginas web, aplicaciones, marcas y otros proyectos. Revisaremos cada solicitud antes de confirmar el trabajo.</p></details>
+      <details><summary>¿Tengo que enviar fotos o videos?</summary><p>No necesariamente. Puedes indicar que solo tienes la idea. En la cotización se deberá confirmar qué materiales hacen falta y qué incluye el servicio.</p></details>
+      <details><summary>¿Los paquetes ya están disponibles?</summary><p>No. Los paquetes Starter, Growth y Brand Studio son conceptos de ejemplo que todavía no están disponibles para contratación.</p></details>
+      <details><summary>¿La cotización confirma la compra?</summary><p>No. El formulario prepara una solicitud de cotización. El alcance, los tiempos de entrega y las condiciones deben confirmarse con el equipo.</p></details>
+      <details><summary>¿Cómo envío mi solicitud?</summary><p>Completa el formulario, revisa el resumen y abre WhatsApp. Pulsa Enviar en WhatsApp para que tu solicitud llegue al número de atención.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band reveal">
+      <div><span class="eyebrow">TU IDEA ES EL COMIENZO</span><h2>Hagamos que te vean.</h2><p>Prepara tu solicitud y cuéntanos qué quieres anunciar.</p></div>
+      <a class="btn btn-primary" href="#cotizar">Cotizar mi video ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <a class="logo" href="#inicio"><span class="logo-mark">5</span><span>PUBLICIDAD 5AM<small>CREATIVIDAD QUE CONECTA</small></span></a>
+    <div class="footer-copy">© <span id="year"></span> Publicidad 5AM. Todos los derechos reservados.</div>
+    <div class="footer-links"><a href="#servicios">Servicios</a><a href="#cotizar">Cotizar</a><a href="#preguntas">Preguntas frecuentes</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  "use strict";
+
+  // Número de destino en formato internacional, sin +, espacios ni guiones.
+  const WHATSAPP_NUMBER = "525533712767";
+  const UNIT_PRICE = 129;
+  const FIRST_VIDEO_PRICE = 69;
+  const MAX_VIDEOS = 50;
+
+  const $ = id => document.getElementById(id);
+  const form = $("quoteForm");
+  const quantity = $("quantity");
+  const toast = $("toast");
+  let toastTimer;
+
+  $("year").textContent = new Date().getFullYear();
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
+  }
+
+  function money(value) {
+    return "$" + value.toLocaleString("es-MX") + " MXN";
+  }
+
+  function safeQuantity() {
+    const parsed = Number.parseInt(quantity.value, 10);
+    const value = Number.isFinite(parsed) ? Math.min(MAX_VIDEOS, Math.max(1, parsed)) : 1;
+    quantity.value = value;
+    return value;
+  }
+
+  function updatePrice() {
+    const count = safeQuantity();
+    const extras = count - 1;
+    const total = FIRST_VIDEO_PRICE + extras * UNIT_PRICE;
+    const discount = UNIT_PRICE - FIRST_VIDEO_PRICE;
+
+    $("firstPrice").textContent = money(FIRST_VIDEO_PRICE);
+    $("extraCount").textContent = extras;
+    $("extraPrice").textContent = money(extras * UNIT_PRICE);
+    $("totalPrice").textContent = money(total);
+    $("discount").textContent = "−" + money(discount);
+  }
+
+  $("minus").addEventListener("click", () => {
+    quantity.value = Math.max(1, safeQuantity() - 1);
+    updatePrice();
+  });
+
+  $("plus").addEventListener("click", () => {
+    quantity.value = Math.min(MAX_VIDEOS, safeQuantity() + 1);
+    updatePrice();
+  });
+
+  quantity.addEventListener("input", () => {
+    if (quantity.value !== "") updatePrice();
+  });
+  quantity.addEventListener("change", updatePrice);
+  updatePrice();
+
+  $("menuToggle").addEventListener("click", () => {
+    const isOpen = $("navLinks").classList.toggle("open");
+    $("menuToggle").setAttribute("aria-expanded", String(isOpen));
+    $("menuToggle").textContent = isOpen ? "✕" : "☰";
+  });
+
+  document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      $("navLinks").classList.remove("open");
+      $("menuToggle").setAttribute("aria-expanded", "false");
+      $("menuToggle").textContent = "☰";
+    });
+  });
+
+  // Animaciones discretas y compatibles con la preferencia de movimiento reducido.
+  if ("IntersectionObserver" in window &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const count = safeQuantity();
+    const total = FIRST_VIDEO_PRICE + (count - 1) * UNIT_PRICE;
+    const discount = UNIT_PRICE - FIRST_VIDEO_PRICE;
+
+    const name = String(data.get("name") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+    const description = String(data.get("description") || "").trim();
+
+    if (!name || !phone || description.length < 10) {
+      showToast("Revisa tu nombre, teléfono y descripción del proyecto.");
+      return;
+    }
+
+    const message = [
+      "🎬 *NUEVA SOLICITUD DE COTIZACIÓN — PUBLICIDAD 5AM*",
+      "",
+      "👤 *DATOS DEL CLIENTE*",
+      "Nombre: " + name,
+      "Marca / negocio: " + (data.get("business") || "No indicado"),
+      "WhatsApp del cliente: " + phone,
+      "Correo: " + (data.get("email") || "No indicado"),
+      "",
+      "📽️ *DETALLES DEL PROYECTO*",
+      "Tipo: " + (data.get("type") || "No indicado"),
+      "Plataforma: " + (data.get("platform") || "No indicada"),
+      "Enlace / usuario: " + (data.get("link") || "No indicado"),
+      "Estilo: " + (data.get("style") || "Por definir"),
+      "Material disponible: " + (data.get("materials") || "No indicado"),
+      "Objetivo: " + (data.get("objective") || "No indicado"),
+      "Descripción: " + description,
+      "",
+      "💰 *COTIZACIÓN ESTIMADA*",
+      "Cantidad: " + count + (count === 1 ? " video" : " videos"),
+      "Primer video: " + money(FIRST_VIDEO_PRICE),
+      "Videos adicionales: " + money((count - 1) * UNIT_PRICE),
+      "Descuento de bienvenida: " + money(discount),
+      "*TOTAL ESTIMADO: " + money(total) + "*",
+      "Presupuesto: " + (data.get("budget") || "Por definir"),
+      "Fecha deseada: " + (data.get("deadline") || "Por definir"),
+      "",
+      "Solicitud enviada desde la página web de Publicidad 5AM.",
+      "Confirmar alcance, disponibilidad y condiciones antes de comenzar."
+    ].join("\n");
+
+    // Se abre WhatsApp con el texto prellenado. El usuario debe pulsar Enviar.
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+
+    // No se envían los datos a ningún servidor desde este formulario.
+    const opened = window.open(url, "_blank", "noopener,noreferrer");
+
+    if (!opened) {
+      showToast("Tu navegador bloqueó la ventana. Abre WhatsApp con el botón siguiente.");
+      let fallback = document.getElementById("whatsappFallback");
+      if (!fallback) {
+        fallback = document.createElement("a");
+        fallback.id = "whatsappFallback";
+        fallback.className = "btn btn-primary";
+        fallback.style.cssText = "width:100%;margin-top:12px";
+        fallback.textContent = "Abrir WhatsApp y enviar solicitud ↗";
+        fallback.target = "_blank";
+        fallback.rel = "noopener noreferrer";
+        form.querySelector(".submit-btn").insertAdjacentElement("afterend", fallback);
+      }
+      fallback.href = url;
+      fallback.focus();
+      return;
+    }
+
+    showToast("WhatsApp se ha abierto. Revisa el mensaje y pulsa Enviar.");
+  });
+})();
+</script>
+</body>
+</html>
